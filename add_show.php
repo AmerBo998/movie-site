@@ -125,7 +125,7 @@ video{
 
 <div class='frame'>
 <div class='head'><strong><i>".$show_name."</i></strong></div><br>
-
+<div class='show_wrapper'>
 <div class='eppies'>
 
 <?php  epps('".$show_name."');?>
@@ -137,7 +137,7 @@ video{
 <div id='syno'><p>".$synopsis."
 <br><br>
 <b>Genre:</b> ".$genre."<br><br>
-<b>Stars:</b> ".$stars."</p></div> 
+<b>Stars:</b> ".$stars."</p></div> </div>
 
 <br>
 <iframe src='".$location."'width='1000' height='500'  style='display:none;' id='movie_player' class='movie_player' >

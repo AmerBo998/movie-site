@@ -260,7 +260,7 @@ $(document).ready(function(e){
   
   
   <div class='head'><strong><i>".$name."</i></strong></div><br>
-  
+  <div class='show_wrapper'>
   <div class='eppies'>
   
   <?php  epps('".$name."');?>
@@ -272,7 +272,7 @@ $(document).ready(function(e){
   <div id='syno'><p>".$synopsis."
   <br><br>
   <b>Genre:</b> ".$genre."<br><br>
-  <b>Stars:</b> ".$stars."</p></div>
+  <b>Stars:</b> ".$stars."</p></div></div>
   
   <br>
   <video id='ep_player' width='1250' height='500' controls style='display:none;'>

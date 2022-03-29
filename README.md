@@ -3,4 +3,4 @@ Website for streaming movies nad TV shows. Movies and shows can be filtered by g
 
 Technologies used: HTML, CSS, JavaScript, PHP, MariaDB(SQL), jQuery, Bootstrap
 
-http://demo-movie.great-site.net/
+http://movies-site.42web.io/

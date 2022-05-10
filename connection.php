@@ -2,7 +2,7 @@
 
 
 
-$conn=new mysqli("sql206.epizy.com","epiz_28848820","4XQG4htOPUE9j","epiz_28848820_movie_site");
+$conn=new mysqli("sql213.epizy.com","epiz_31406413","9iAIYNjUk0ZIG","epiz_31406413_movie_site");
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);

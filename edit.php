@@ -134,24 +134,28 @@ var check=document.getElementById("h").value;
 
 <button id="menu_btn" ></button>
 <button id="search_small" ></button><br>
-<ul class="nav_bar" id="nav_bar">
-<li><a href="index.php">Home</a></li>
-<li><a href="genre.php">Genre</a></li>
-<li><a href="release.php">Release year</a></li>
+<div class='menu_wrapper'>
+<ul class='nav_bar' id='nav_bar'>
+<li><a href='index.php'>Home</a></li>
+<li><a href='genre.php'>Genre</a></li>
+<li><a href='release.php'>Release year</a></li>
 <?php  echo menu_check();?>
 
 </ul>
 
 
-<div class="search_ul" id="search_ul">
-<form action="search.php" method="post" class="search_help">
 
- <div class="search_help1"><button type="submit" class="search_btn" id="search_btn"></button>
-<input type="text" class="search" name="search_box" id="search_box" placeholder="  Search movies..." ></input></div>
-<li id="here"></li>
+<div class='search_ul' id='search_ul'>
+<form action='search.php' method='post' class='search_help'>
+
+ <div class='search_help1'><button type='submit' class='search_btn' id='search_btn'></button>
+<input type='text' class='search' name='search_box' id='search_box' placeholder='  Search movies...' ></input></div>
+
 </form>
 
 </div>
+</div>
+<li id='here'></li>
 
 
 <br><br><br>

@@ -76,6 +76,7 @@ function episodes(){
 
 <button id='menu_btn' ></button>
 <button id='search_small' ></button><br>
+<div class='menu_wrapper'>
 <ul class='nav_bar' id='nav_bar'>
 <li><a href='index.php'>Home</a></li>
 <li><a href='genre.php'>Genre</a></li>
@@ -85,15 +86,18 @@ function episodes(){
 </ul>
 
 
+
 <div class='search_ul' id='search_ul'>
 <form action='search.php' method='post' class='search_help'>
 
  <div class='search_help1'><button type='submit' class='search_btn' id='search_btn'></button>
 <input type='text' class='search' name='search_box' id='search_box' placeholder='  Search movies...' ></input></div>
-<li id='here'></li>
+
 </form>
 
 </div>
+</div>
+<li id='here'></li>
 
 
 

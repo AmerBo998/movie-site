@@ -16,7 +16,9 @@ $video=$_POST['video'];
 $stars=$_POST['stars'];
 $nos=$_POST['nos'];
 
-
+if(strpos($video, "youtube")){
+    $video=str_replace("watch?v=","embed/",$video);
+}
 
 if($type=="show"){
 
@@ -29,6 +31,8 @@ $path="pages/";
 
 }
 
+
+$synopsis=str_replace("'","",$synopsis);
 $pg=str_replace([" ","/",":",";","'","&"],"-",$name);
 $page_loc=$path."".$pg.".php";
 $myfile = fopen($path."".$pg.".php", "w") or die("Unable to open file!");
@@ -62,28 +66,7 @@ include ('../functions.php');
   crossorigin='anonymous'></script>
 
 <script src='../script.js'></script>
-<script>
-$(document).ready(function(e){
 
-  $('#search_box').keyup(function(){
-
-          $('#here').show();
-          var x=$(this).val();
-          $.ajax({
-
-              type:'POST',
-              url:'../searchq.php',
-              data: 'q='+x,
-              success:function(data){
-
-                  $('#here').html(data);
-
-              },
-          });
-  });
-});
-
-</script>
 
 
 
@@ -95,6 +78,7 @@ $(document).ready(function(e){
 .temp_body{
 background-image: url(' ".$background."');
 background-size:cover;
+background-attachment:fixed;
 }
 
 
@@ -112,17 +96,14 @@ video{
 <body class='temp_body'>
 <button id='menu_btn' ></button>
 <button id='search_small' ></button><br>
+<div class='menu_wrapper'>
 <ul class='nav_bar' id='nav_bar'>
-<li><a href='../index.php'>Home</a></li>
-<li><a href='../genre.php'>Genre</a></li>
-<li><a href='../release.php'>Release year</a></li>
+<li><a href='index.php'>Home</a></li>
+<li><a href='genre.php'>Genre</a></li>
+<li><a href='release.php'>Release year</a></li>
 <?php  echo menu_check();?>
 
 </ul>
-
-
-
-
 
 
 
@@ -131,17 +112,17 @@ video{
 
  <div class='search_help1'><button type='submit' class='search_btn' id='search_btn'></button>
 <input type='text' class='search' name='search_box' id='search_box' placeholder='  Search movies...' ></input></div>
-<li id='here'></li>
+
 </form>
 
 </div>
-
-
-
-
-
 </div>
-<iframe src='".$video."'width='1000' height='500'  class='movie_player' >
+<li id='here'></li>
+
+
+
+</div><br><br>
+<iframe src='".$video." 'width='1000' height='500'  allowfullscreen style='display:block;' class='movie_player' >
   
   
   
@@ -154,7 +135,7 @@ video{
  </div>
 <br>
 <br>
-
+<Br><br>
 
 </body>
 </html>";
@@ -220,6 +201,7 @@ $(document).ready(function(e){
   .temp_body{
   background-image: url('".$background."');
   background-size:cover;
+  background-attachment:fixed;
   }
   
   
@@ -238,13 +220,15 @@ $(document).ready(function(e){
 
  <button id='menu_btn' ></button>
 <button id='search_small' ></button><br>
+<div class='menu_wrapper'>
 <ul class='nav_bar' id='nav_bar'>
-<li><a href='../index.php'>Home</a></li>
-<li><a href='../genre.php'>Genre</a></li>
-<li><a href='../release.php'>Release year</a></li>
+<li><a href='index.php'>Home</a></li>
+<li><a href='genre.php'>Genre</a></li>
+<li><a href='release.php'>Release year</a></li>
 <?php  echo menu_check();?>
 
 </ul>
+
 
 
 <div class='search_ul' id='search_ul'>
@@ -252,10 +236,12 @@ $(document).ready(function(e){
 
  <div class='search_help1'><button type='submit' class='search_btn' id='search_btn'></button>
 <input type='text' class='search' name='search_box' id='search_box' placeholder='  Search movies...' ></input></div>
-<li id='here'></li>
+
 </form>
 
 </div>
+</div>
+<li id='here'></li>
   
   
   
@@ -275,10 +261,7 @@ $(document).ready(function(e){
   <b>Stars:</b> ".$stars."</p></div></div>
   
   <br>
-  <video id='ep_player' width='1250' height='500' controls style='display:none;'>
-  <source src='' type='video/mp4'>
-    <source src='' type='video/ogg'>
-  </video>
+  <iframe src=''width='1000' height='500'  style='display:none;' allowfullscreen id='movie_player' class='movie_player' >
   
   
   </body>

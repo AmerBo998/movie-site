@@ -16,16 +16,21 @@ $ep_num=$_POST['ep_num'.$n];
 $location=$_POST['location'.$i];
 $episode_name=$_POST[$i];
 
+
+if(strpos($location, "youtube")){
+    $location=str_replace("watch?v=","embed/",$location);
+}
+
 $n+=1;
 
 
-$conn = new mysqli("sql206.epizy.com","epiz_28848820","4XQG4htOPUE9j","epiz_28848820_movie_site");
+$conn = new mysqli("sql213.epizy.com","epiz_31406413","9iAIYNjUk0ZIG","epiz_31406413_movie_site");
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "INSERT INTO episodes 
+$sql = "INSERT INTO episodes (show_name, season, episode_no, location,episode_name)
 VALUES
  ('".$show_name."', '".$season."', '".$ep_num."','".$location."', '".$episode_name."')";
 
